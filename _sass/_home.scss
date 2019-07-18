@@ -1,0 +1,24 @@
+* {
+    background-color: #afeeee; 
+}
+
+#welcome {
+    display: flex; 
+    justify-content: center; 
+    p {
+        font-size: 100px; 
+    }
+    img { 
+        width: 10em; 
+        height: 10em; 
+        border-radius: 360px; 
+        position: relative; 
+        top: 4em; 
+        right: 1.5em; 
+    }
+}
+#note {
+    display: flex; 
+    justify-content: center; 
+    font-size: 120px; 
+}
