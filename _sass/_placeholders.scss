@@ -1,0 +1,19 @@
+%flex-center { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+%brand-social-bar, %regular-social-bar {
+    @extend %fa-icon; 
+    @extend .fa-5x; 
+    margin: 0 0.2em 0 0.2em; 
+}
+
+%brand-social-bar {
+    @extend .fab; 
+}
+
+%regular-social-bar {
+    @extend .far; 
+}

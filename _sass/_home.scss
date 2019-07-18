@@ -2,23 +2,39 @@
     background-color: #afeeee; 
 }
 
-#welcome {
-    display: flex; 
-    justify-content: center; 
-    p {
-        font-size: 100px; 
+#home-header {
+    height: 60vh; 
+    @extend %flex-center; 
+    h2 {
+        margin: $tight-lower-margin; 
     }
     img { 
         width: 10em; 
         height: 10em; 
         border-radius: 360px; 
         position: relative; 
-        top: 4em; 
         right: 1.5em; 
     }
 }
-#note {
-    display: flex; 
-    justify-content: center; 
-    font-size: 120px; 
+
+.social-bar {
+    @extend %flex-center; 
+    .github {
+        @extend %brand-social-bar; 
+        &:before {
+            content: fa-content($fa-var-github); 
+        }
+    }
+    .linkedin {
+        @extend %brand-social-bar; 
+        &:before {
+            content: fa-content($fa-var-linkedin); 
+        }
+    }
+    .email {
+        @extend %regular-social-bar; 
+        &:before {
+            content: fa-content($fa-var-envelope); 
+        }
+    }
 }

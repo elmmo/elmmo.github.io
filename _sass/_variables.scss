@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
-* {
-    font-family: "Noto Sans"; 
-}
+/* TYPOGRAPHY */
+//// fonts ////
+$body-font: "Cabin"; 
+$title-font: "Satisfy";
+$fa-font-path: "../webfonts";
+
+//// margins ////
+$standard-heading-margin: 0.2em 0 0.2em 0; 
+$tight-lower-margin: 0.2em 0 -0.3em 0; 
+$tight-upper-margin: -0.3em 0 0.2em 0; 
+
+
