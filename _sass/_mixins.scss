@@ -1,0 +1,5 @@
+@mixin content-wide($gradient-shade) {
+    .feature-img {
+        background-color: darken($base-highlight, 10% * $gradient-shade); 
+    }
+}

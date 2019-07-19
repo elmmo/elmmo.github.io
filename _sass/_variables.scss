@@ -2,11 +2,22 @@
 //// fonts ////
 $body-font: "Cabin"; 
 $title-font: "Satisfy";
-$fa-font-path: "../webfonts";
 
-//// margins ////
+/* COLORS */ 
+$base-highlight: rgb(94, 159, 255); 
+$light-gray: rgba(223, 223, 223, 0.324); 
+
+/* SPACING */ 
+//// text margins ////
+$large-lower-margin: 1em; 
 $standard-heading-margin: 0.2em 0 0.2em 0; 
 $tight-lower-margin: 0.2em 0 -0.3em 0; 
 $tight-upper-margin: -0.3em 0 0.2em 0; 
+
+//// structural margins ////
+$small-side-margin: 0 3% 0 3%; 
+
+/* FEATURED */ 
+$featured-count: 3; 
 
 

@@ -1,9 +1,5 @@
-* {
-    background-color: #afeeee; 
-}
-
 #home-header {
-    height: 60vh; 
+    height: 100vh; 
     @extend %flex-center; 
     h2 {
         margin: $tight-lower-margin; 
@@ -16,25 +12,44 @@
         right: 1.5em; 
     }
 }
+div[class^="content-wide-"] {           // applying style to every wide content div
+    border: solid $light-gray 0.1em; 
+    height: 50vh; 
+    margin: 1vh 20vh 1vh 20vh; 
+    @extend %flex-center; 
+    .text {
+        margin: $small-side-margin; 
+        display: inline-block; 
+        width: 45%;
+        h6 {
+            margin-bottom: 0.8em; 
+            display: inline-block;
+        }
+        p {
+            @extend %body-font-regularize; 
+            margin: 0 10% 0 10%; 
+        }
+        i {
+            margin: 0 5% 0 0; 
+        }
+    }
+    .feature-img {
+        @extend %flex-center; 
+        width: 54%;
+        height: 100%; 
+        img {
+            width: 85%; 
+            max-height: 90%; 
+        }
+    }
+}
+@for $i from 1 through $featured-count {
+    .content-wide-#{$i} {
+        @include content-wide($i); 
+    }
+}
 
 .social-bar {
+    margin-bottom: 2em; 
     @extend %flex-center; 
-    .github {
-        @extend %brand-social-bar; 
-        &:before {
-            content: fa-content($fa-var-github); 
-        }
-    }
-    .linkedin {
-        @extend %brand-social-bar; 
-        &:before {
-            content: fa-content($fa-var-linkedin); 
-        }
-    }
-    .email {
-        @extend %regular-social-bar; 
-        &:before {
-            content: fa-content($fa-var-envelope); 
-        }
-    }
 }

@@ -8,13 +8,11 @@
 @import "variables.scss"; 
 
 //// typography ////
-@import "./font-awesome/fontawesome.scss";
-@import "./font-awesome/regular.scss"; 
-@import "./font-awesome/brands.scss"; 
 @import "typography.scss"; 
 
 //// functions ////
 @import "placeholders.scss"; 
+@import "mixins.scss";
 
 //// templates //// 
 @import "home.scss"; 
