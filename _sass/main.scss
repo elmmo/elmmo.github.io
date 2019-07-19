@@ -1,2 +1,18 @@
+/* OUTSIDE IMPORTS */ 
+//// typography //// 
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+
+/* SASS COMPONENTS */ 
+//// variables //// 
 @import "variables.scss"; 
+
+//// typography ////
+@import "typography.scss"; 
+
+//// functions ////
+@import "placeholders.scss"; 
+@import "mixins.scss";
+
+//// templates //// 
 @import "home.scss"; 

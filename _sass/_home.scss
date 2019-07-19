@@ -1,24 +1,68 @@
-* {
-    background-color: #afeeee; 
-}
-
-#welcome {
-    display: flex; 
-    justify-content: center; 
-    p {
-        font-size: 100px; 
+#home-header {
+    height: 100vh; 
+    @extend %flex-center; 
+    h2 {
+        margin: $tight-lower-margin; 
     }
     img { 
         width: 10em; 
         height: 10em; 
         border-radius: 360px; 
         position: relative; 
-        top: 4em; 
         right: 1.5em; 
     }
 }
-#note {
-    display: flex; 
-    justify-content: center; 
-    font-size: 120px; 
+#featured-home {
+    margin-bottom: 8%; 
+    div[class^="content-wide-"] {           // applying style to every wide content div
+        border: solid $light-gray 0.1em; 
+        height: 50vh; 
+        margin: 1vh 20vh 1vh 20vh; 
+        @extend %flex-center; 
+        .text {
+            margin: $small-side-margin; 
+            display: inline-block; 
+            width: 45%;
+            h6 {
+                margin-bottom: 0.8em; 
+                display: inline-block;
+            }
+            p {
+                @extend %body-font-regularize; 
+                margin: 0 10% 0 10%; 
+            }
+            i {
+                margin: 0 5% 0 0; 
+            }
+        }
+        .feature-img {
+            @extend %flex-center; 
+            width: 54%;
+            height: 100%; 
+            img {
+                width: 85%; 
+                max-height: 90%; 
+            }
+        }
+    }
+}
+@for $i from 1 through $featured-count {
+    .content-wide-#{$i} {
+        .feature-img {
+            background-color: gradient($i); 
+        }
+    }
+    .social-bar-#{$i} {
+        color: black; 
+        &:hover {
+            color: gradient($i); 
+        }
+    }
+}
+.social-bar {
+    margin: $large-upper-lower-margin;  
+    @extend %flex-center; 
+    i {
+        margin: 0 0.2em 0 0.2em; 
+    }
 }

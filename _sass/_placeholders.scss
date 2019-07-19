@@ -1,0 +1,13 @@
+/* SPACING */
+%flex-center { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* TYPOGRAPHY */ 
+%body-font-regularize {
+    letter-spacing: 0.2px; 
+    font-size: 1.2em; 
+    line-height: 1.2em; 
+}
