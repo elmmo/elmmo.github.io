@@ -2,12 +2,6 @@
 layout: home
 title: Elizabeth Min
 profile: /assets/img/profile.JPG
-feature-1: /assets/img/msft.png 
-feature-2: /assets/img/expedia.png
-feature-3: /assets/img/whitworth.png
-external-link-1: https://github.com/elmmo
-external-link-2: https://www.linkedin.com/in/elizabeth-min-73589014a/
-external-link-3: mailto:elmm682@gmail.com
 ---
 <div id="home">
     <div id="home-header">
@@ -17,44 +11,54 @@ external-link-3: mailto:elmm682@gmail.com
             <p>STORYTELLER   |  CODER  |  EXPLORER</p>
         </div>
     </div>
-    <div id="featured-home">
-        <div class="content-wide-1">
-            <div class="text">
-                <i class="fas fa-flask fa-2x"></i><h6>Whitworth University Research</h6>
-                <p>Currently, I'm a research assistant under Dr. Predrag Tosic researching applications of reputation, trust, and multi-tiered learning to fake news detection.</p>
-            </div>
-            <div class="feature-img">
-                <img src="{{ page.feature-3 }}" />
-            </div> 
+    <div class="featured">
+        <!-- HORIZONTAL PANELS -->
+        <div class="horizontal-panels">
+            {% include featured-wide-panel.html 
+                index="1" 
+                font-awesome="fas fa-flask" 
+                title="Whitworth University Research" 
+                content="Currently, I'm a research assistant under Dr. Predrag Tosic researching applications of reputation, trust, and multi-tiered learning to fake news detection." 
+                img="/assets/img/whitworth.png"   %}
+            {% include featured-wide-panel.html 
+                index="2" 
+                font-awesome="fas fa-globe-americas" 
+                title="Expedia Group" 
+                content="While interning on the Partner APIs team, I wrote and connected an API to the team's content cache, which serves hotel and booking data across Expedia's organizations." 
+                img="/assets/img/expedia.png"   %}
+            {% include featured-wide-panel.html 
+                index="3" 
+                font-awesome="fab fa-windows" 
+                title="Microsoft AI and Research" 
+                content="As a software intern on the Geocoding team, I built a platform for performance testing and address query analysis, replacing a soon-to-be-deprecated tool." 
+                img="/assets/img/msft.png"   %}
         </div>
-        <div class="content-wide-2">
-            <div class="text">
-                <i class="fas fa-globe-americas fa-2x"></i><h6>Expedia Group</h6>
-                <p>While interning on the Partner APIs team, I wrote and connected an API to the team's content cache, which serves hotel and booking data across Expedia's organizations.</p>
-            </div>
-            <div class="feature-img">
-                <img src="{{ page.feature-2 }}" />
-            </div> 
-        </div>
-        <div class="content-wide-3">
-            <div class="text">
-                <i class="fab fa-windows fa-2x" ></i><h6>Microsoft AI and Research</h6>
-                <p>As a software intern on the Geocoding team, I built a platform for performance testing and address query analysis, replacing a soon-to-be-deprecated tool.</p>
-            </div>
-            <div class="feature-img">
-                <img src="{{ page.feature-1 }}" />
-            </div> 
+        
+        <!-- VERTICAL PANELS -->
+        <h4>Projects</h4>
+        <div class="vertical-panels">
+            {% include featured-tall-panel.html 
+                index="1" 
+                font-awesome="fas fa-network-wired" 
+                title="Montage" 
+                content="A social network and meeting scheduler for 45 Whitworth University freshmen in computer science and related fields." 
+                tools="PHP, mySQL, HTML, CSS, JS"
+                status="current"   %}
+            {% include featured-tall-panel.html 
+                index="2" 
+                font-awesome="fas fa-paint-roller" 
+                title="AR-t" 
+                content="An augmented reality iOS app that allows users to create and share artwork on a real-world canvas." 
+                tools="6D.ai, Swift"
+                status="current"    %}
+            {% include featured-tall-panel.html 
+                index="3" 
+                font-awesome="fas fa-mask" 
+                title="Marvel Character Cache" 
+                content="A character search engine connected to the Marvel API, enhanced by local caching ability." 
+                tools="Java"
+                status="past"    %}
         </div>
     </div>
-    <div class="social-bar">
-        <a href="{{ page.external-link-1 }}" target="_blank">
-            <i class="fab fa-github fa-5x social-bar-1"></i>
-        </a>
-        <a href="{{ page.external-link-2 }}" target="_blank">
-            <i class="fab fa-linkedin-in fa-5x social-bar-2"></i>
-        </a>
-        <a href="{{ page.external-link-3 }}" target="_blank">
-            <i class="far fa-envelope fa-5x social-bar-3"></i>
-        </a>
-    </div>
+    {% include social-bar.html %}
 </div>

@@ -1,0 +1,11 @@
+<div class="content-tall-{{ include.index }}">
+    <i class="{{ include.font-awesome }} fa-2x"></i>
+    <h6>{{ include.title }}</h6>
+    <p>{{ include.content }}</p>
+    <p>Built with {{ include.tools }}</p>
+    {% if include.status == "current" %}
+        <span class="current">In-Progress</span>
+    {% elsif include.status == "past" %}
+        <span class="past">Complete</span>
+    {% endif %}
+</div>
