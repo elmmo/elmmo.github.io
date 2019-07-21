@@ -12,35 +12,53 @@ profile: /assets/img/profile.JPG
         </div>
     </div>
     <div class="featured">
-        {% include featured-wide-panel.html 
-            index="1" 
-            font-awesome="fas fa-flask" 
-            title="Whitworth University Research" 
-            content="Currently, I'm a research assistant under Dr. Predrag Tosic researching applications of reputation, trust, and multi-tiered learning to fake news detection." 
-            img="/assets/img/whitworth.png"   %}
-        {% include featured-wide-panel.html 
-            index="2" 
-            font-awesome="fas fa-globe-americas" 
-            title="Expedia Group" 
-            content="While interning on the Partner APIs team, I wrote and connected an API to the team's content cache, which serves hotel and booking data across Expedia's organizations." 
-            img="/assets/img/expedia.png"   %}
-        {% include featured-wide-panel.html 
-            index="3" 
-            font-awesome="fab fa-windows" 
-            title="Microsoft AI and Research" 
-            content="As a software intern on the Geocoding team, I built a platform for performance testing and address query analysis, replacing a soon-to-be-deprecated tool." 
-            img="/assets/img/msft.png"   %}
-    </div>
-    <!-- <div class="featured">
-        <div class="content-tall-1">
-                <div class="text">
-                        <i class="fas fa-flask fa-2x"></i><h6>Whitworth University Research</h6>
-                        <p>Currently, I'm a research assistant under Dr. Predrag Tosic researching applications of reputation, trust, and multi-tiered learning to fake news detection.</p>
-                    </div>
-                    <div class="feature-img">
-                        <img src="{{ page.feature-3 }}" />
-                    </div> 
+        <!-- HORIZONTAL PANELS -->
+        <div class="horizontal-panels">
+            {% include featured-wide-panel.html 
+                index="1" 
+                font-awesome="fas fa-flask" 
+                title="Whitworth University Research" 
+                content="Currently, I'm a research assistant under Dr. Predrag Tosic researching applications of reputation, trust, and multi-tiered learning to fake news detection." 
+                img="/assets/img/whitworth.png"   %}
+            {% include featured-wide-panel.html 
+                index="2" 
+                font-awesome="fas fa-globe-americas" 
+                title="Expedia Group" 
+                content="While interning on the Partner APIs team, I wrote and connected an API to the team's content cache, which serves hotel and booking data across Expedia's organizations." 
+                img="/assets/img/expedia.png"   %}
+            {% include featured-wide-panel.html 
+                index="3" 
+                font-awesome="fab fa-windows" 
+                title="Microsoft AI and Research" 
+                content="As a software intern on the Geocoding team, I built a platform for performance testing and address query analysis, replacing a soon-to-be-deprecated tool." 
+                img="/assets/img/msft.png"   %}
         </div>
-    </div> -->
+        
+        <!-- VERTICAL PANELS -->
+        <h4>Projects</h4>
+        <div class="vertical-panels">
+            {% include featured-tall-panel.html 
+                index="1" 
+                font-awesome="fas fa-network-wired" 
+                title="Montage" 
+                content="A social network and meeting scheduler for 45 Whitworth University freshmen in computer science and related fields." 
+                tools="PHP, mySQL, HTML, CSS, JS"
+                status="current"   %}
+            {% include featured-tall-panel.html 
+                index="2" 
+                font-awesome="fas fa-paint-roller" 
+                title="AR-t" 
+                content="An augmented reality iOS app that allows users to create and share artwork on a real-world canvas." 
+                tools="6D.ai, Swift"
+                status="current"    %}
+            {% include featured-tall-panel.html 
+                index="3" 
+                font-awesome="fas fa-mask" 
+                title="Marvel Character Cache" 
+                content="A character search engine connected to the Marvel API, enhanced by local caching ability." 
+                tools="Java"
+                status="past"    %}
+        </div>
+    </div>
     {% include social-bar.html %}
 </div>

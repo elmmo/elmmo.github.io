@@ -15,36 +15,91 @@
 
 .featured {
     margin-bottom: 8%; 
-    div[class^="content-wide-"] {           // applying style to every wide content div
-        border: solid $light-gray 0.1em; 
-        height: 50vh; 
-        margin: 1vh 20vh 1vh 20vh; 
+    h4 {
+        text-align: center; 
+    }
+    .horizontal-panels {
+        margin-bottom: 10%; 
+        div[class^="content-wide-"] {           // applying style to every wide content div
+            border: solid $light-gray 0.1em; 
+            height: 50vh; 
+            margin: 1vh 20vh 1vh 20vh; 
+            @extend %flex-center; 
+            .wide-text {
+                margin: 0 3% 0 3%; 
+                display: inline-block; 
+                width: 45%;
+                h6 {
+                    margin-bottom: 0.8em; 
+                    display: inline-block;
+                }
+                p {
+                    @extend %body-font-regularize; 
+                    margin: 0 10% 0 10%; 
+                }
+                i {
+                    margin: 0 5% 0 0; 
+                    color: $light-gray; 
+                }
+            }
+            .feature-img {
+                @extend %flex-center; 
+                width: 54%;
+                height: 100%; 
+                img {
+                    width: 85%; 
+                    max-height: 90%; 
+                }
+            }
+        }
+    }
+    .vertical-panels {
         @extend %flex-center; 
-        .text {
-            margin: $small-side-margin; 
-            display: inline-block; 
-            width: 45%;
+        margin: 0 5% 0 5%; 
+        div[class^="content-tall-"] {           // applying style to every tall content div
+            border: solid $light-gray 0.1em; 
+            height: 50vh; 
+            width: 30vw;
+            @extend %flex-center; 
+            flex-direction: column; 
+            text-align: center; 
+            padding: 6vh 0 6vh 0; 
+            margin: 0 1% 0 1%; 
+            i {
+                margin: 0.5em 0 0.8em 0;
+            }
             h6 {
-                margin-bottom: 0.8em; 
-                display: inline-block;
+                margin-bottom: 0.3em; 
             }
             p {
                 @extend %body-font-regularize; 
                 margin: 0 10% 0 10%; 
             }
-            i {
-                margin: 0 5% 0 0; 
+            p:nth-of-type(2) {
+                color: $medium-gray; 
+                margin: 1em 0 1em 0; 
+            }
+            .current, .past {
+                border: 1pt solid;
+                border-radius: 0.3em; 
+                padding: 0.3em 0.4em; 
+            }
+            .current {
+                border-color: green;
+                color: green; 
+            }
+            .past {
+                border-color: $medium-gray; 
+                color: $medium-gray; 
             }
         }
-        .feature-img {
-            @extend %flex-center; 
-            width: 54%;
-            height: 100%; 
-            img {
-                width: 85%; 
-                max-height: 90%; 
-            }
-        }
+    }
+}
+.social-bar {
+    margin: $large-upper-lower-margin;  
+    @extend %flex-center; 
+    i {
+        margin: 0 0.2em 0 0.2em; 
     }
 }
 @for $i from 1 through $featured-count {
@@ -54,16 +109,9 @@
         }
     }
     .social-bar-#{$i} {
-        color: black; 
+        color: $medium-gray; 
         &:hover {
             color: gradient($base-blue, $i); 
         }
-    }
-}
-.social-bar {
-    margin: $large-upper-lower-margin;  
-    @extend %flex-center; 
-    i {
-        margin: 0 0.2em 0 0.2em; 
     }
 }
