@@ -32,13 +32,13 @@ h6 {
   font-size: 2em; }
 
 /* SPACING */
-#home-header, #featured-home div[class^="content-wide-"], #featured-home div[class^="content-wide-"] .feature-img, .social-bar {
+#home-header, .featured div[class^="content-wide-"], .featured div[class^="content-wide-"] .feature-img, .social-bar {
   display: flex;
   justify-content: center;
   align-items: center; }
 
 /* TYPOGRAPHY */
-#featured-home div[class^="content-wide-"] .text p {
+.featured div[class^="content-wide-"] .text p {
   letter-spacing: 0.2px;
   font-size: 1.2em;
   line-height: 1.2em; }
@@ -54,27 +54,27 @@ h6 {
     position: relative;
     right: 1.5em; }
 
-#featured-home {
+.featured {
   margin-bottom: 8%; }
-  #featured-home div[class^="content-wide-"] {
+  .featured div[class^="content-wide-"] {
     border: solid rgba(223, 223, 223, 0.324) 0.1em;
     height: 50vh;
     margin: 1vh 20vh 1vh 20vh; }
-    #featured-home div[class^="content-wide-"] .text {
+    .featured div[class^="content-wide-"] .text {
       margin: 0 3% 0 3%;
       display: inline-block;
       width: 45%; }
-      #featured-home div[class^="content-wide-"] .text h6 {
+      .featured div[class^="content-wide-"] .text h6 {
         margin-bottom: 0.8em;
         display: inline-block; }
-      #featured-home div[class^="content-wide-"] .text p {
+      .featured div[class^="content-wide-"] .text p {
         margin: 0 10% 0 10%; }
-      #featured-home div[class^="content-wide-"] .text i {
+      .featured div[class^="content-wide-"] .text i {
         margin: 0 5% 0 0; }
-    #featured-home div[class^="content-wide-"] .feature-img {
+    .featured div[class^="content-wide-"] .feature-img {
       width: 54%;
       height: 100%; }
-      #featured-home div[class^="content-wide-"] .feature-img img {
+      .featured div[class^="content-wide-"] .feature-img img {
         width: 85%;
         max-height: 90%; }
 

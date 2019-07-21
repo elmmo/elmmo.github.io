@@ -1,3 +1,0 @@
-@function gradient($gradient-shade) {
-    @return darken($base-highlight, 10% * $gradient-shade); 
-}

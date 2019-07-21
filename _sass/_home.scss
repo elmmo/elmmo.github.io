@@ -12,7 +12,8 @@
         right: 1.5em; 
     }
 }
-#featured-home {
+
+.featured {
     margin-bottom: 8%; 
     div[class^="content-wide-"] {           // applying style to every wide content div
         border: solid $light-gray 0.1em; 
@@ -49,13 +50,13 @@
 @for $i from 1 through $featured-count {
     .content-wide-#{$i} {
         .feature-img {
-            background-color: gradient($i); 
+            background-color: gradient($base-blue, $i); 
         }
     }
     .social-bar-#{$i} {
         color: black; 
         &:hover {
-            color: gradient($i); 
+            color: gradient($base-blue, $i); 
         }
     }
 }

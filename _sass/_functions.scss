@@ -1,0 +1,3 @@
+@function gradient($base, $gradient-shade) {
+    @return darken($base, 10% * $gradient-shade); 
+}
