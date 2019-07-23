@@ -38,7 +38,7 @@ h6 {
   align-items: center; }
 
 /* TYPOGRAPHY */
-.featured .horizontal-panels div[class^="content-wide-"] .wide-text p, .featured .vertical-panels div[class^="content-tall-"] p, .footer p, .footer span {
+.about .about-text, .featured .horizontal-panels div[class^="content-wide-"] .wide-text p, .featured .vertical-panels div[class^="content-tall-"] p, .footer p, .footer span {
   letter-spacing: 0.2px;
   font-size: 1.2em;
   line-height: 1.2em; }
@@ -57,12 +57,24 @@ body {
     position: relative;
     right: 1.5em; }
 
+h4 {
+  text-align: center; }
+
+.about {
+  margin: 0 20vw 8% 20vw;
+  display: flex; }
+  .about img {
+    border-radius: 0 40%;
+    width: 20vw;
+    box-shadow: -0.5em 0.5em 1em rgba(148, 148, 148, 0.721);
+    margin-right: 3vw; }
+  .about .about-text p:nth-of-type(1) {
+    margin-top: 3em; }
+
 .featured {
   margin-bottom: 8%; }
-  .featured h4 {
-    text-align: center; }
   .featured .horizontal-panels {
-    margin-bottom: 10%; }
+    margin-bottom: 8%; }
     .featured .horizontal-panels div[class^="content-wide-"] {
       border: solid rgba(223, 223, 223, 0.324) 0.1em;
       height: 50vh;
@@ -117,6 +129,18 @@ body {
         color: rgba(148, 148, 148, 0.721); }
       .featured .vertical-panels div[class^="content-tall-"]:hover p, .featured .vertical-panels div[class^="content-tall-"]:hover i, .featured .vertical-panels div[class^="content-tall-"]:hover h6 {
         color: white; }
+  .featured #view-more {
+    text-align: right;
+    color: rgba(148, 148, 148, 0.721);
+    text-decoration: none; }
+    .featured #view-more p {
+      margin: 1.4em 5em 0 0; }
+    .featured #view-more:hover {
+      text-decoration: underline;
+      color: black; }
+    .featured #view-more:visited {
+      text-decoration: none;
+      color: rgba(148, 148, 148, 0.721); }
 
 .social-bar {
   margin: 2em 0 2em 0; }

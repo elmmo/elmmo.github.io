@@ -15,14 +15,29 @@ body {
         right: 1.5em; 
     }
 }
-
-.featured {
-    margin-bottom: 8%; 
-    h4 {
-        text-align: center; 
+h4 {
+    text-align: center; 
+}
+.about {
+    margin: 0 20vw $panel-buffer 20vw; 
+    display: flex; 
+    img {
+        border-radius: 0 40%; 
+        width: 20vw; 
+        box-shadow: -0.5em 0.5em 1em $medium-gray; 
+        margin-right: 3vw; 
     }
+    .about-text {
+        @extend %body-font-regularize; 
+        p:nth-of-type(1) {
+            margin-top: 3em; 
+        }
+    }
+}
+.featured {
+    margin-bottom: $panel-buffer; 
     .horizontal-panels {
-        margin-bottom: 10%; 
+        margin-bottom: $panel-buffer; 
         div[class^="content-wide-"] {           // applying style to every wide content div
             border: solid $light-gray 0.1em; 
             height: 50vh; 
@@ -101,6 +116,22 @@ body {
                     color: white; 
                 }
             }
+        }
+    }
+    #view-more {
+        text-align: right;
+        color: $medium-gray; 
+        text-decoration: none; 
+        p {
+            margin: 1.4em 5em 0 0; 
+        }
+        &:hover {
+            text-decoration: underline; 
+            color: black; 
+        }
+        &:visited {
+            text-decoration: none; 
+            color: $medium-gray; 
         }
     }
 }
