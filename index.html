@@ -11,8 +11,16 @@ profile: /assets/img/profile.JPG
             <p>STORYTELLER   |  CODER  |  EXPLORER</p>
         </div>
     </div>
+    <h4>About Me</h4>
+    {% include about.html 
+        pic="/assets/img/about.jpg"
+        headline="A writer turned programmer, "
+        content-1="I picked up coding in middle school when I revamped the literary blog that I ran for five years. One online class led to another, and I haven't stopped learning since."
+        content-2="Today, I'm passionate about creating robust solutions to difficult problems and technology that empowers people."
+        content-3="When I'm not coding, you can find me doing philosophy on Whitworth's Ethics Bowl team, trail running in the back 40 acres behind campus, or hunting down my next great eat."     %}
     <div class="featured">
         <!-- HORIZONTAL PANELS -->
+        <h4>Experience</h4>
         <div class="horizontal-panels">
             {% include featured-wide-panel.html 
                 index="1" 
@@ -59,6 +67,10 @@ profile: /assets/img/profile.JPG
                 tools="Java"
                 status="past"    %}
         </div>
+        <a href="https://github.com/elmmo" id="view-more" target="_blank">
+            <p>View more on GitHub   >></p>
+        </a>
     </div>
     {% include social-bar.html %}
+    {% include footer.html %}
 </div>

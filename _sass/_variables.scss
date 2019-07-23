@@ -6,7 +6,9 @@ $title-font: "Satisfy";
 /* COLORS */ 
 $base-blue: rgb(94, 159, 255); 
 $light-gray: rgba(223, 223, 223, 0.324); 
+$opaque-light-gray: rgb(237, 237, 237); 
 $medium-gray: rgba(148, 148, 148, 0.721); 
+$active-green: rgb(0, 210, 0); 
 
 /* SPACING */ 
 //// text margins ////
@@ -14,6 +16,10 @@ $large-upper-lower-margin: 2em 0 2em 0;
 $standard-heading-margin: 0.2em 0 0.2em 0; 
 $tight-lower-margin: 0.2em 0 -0.3em 0; 
 $tight-upper-margin: -0.3em 0 0.2em 0; 
+
+
+//// structure ////
+$panel-buffer: 8%;
 
 /* FEATURED */ 
 $featured-count: 3; 

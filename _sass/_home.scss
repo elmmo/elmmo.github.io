@@ -1,3 +1,6 @@
+body {
+    margin: 0; 
+}
 #home-header {
     height: 100vh; 
     @extend %flex-center; 
@@ -12,21 +15,36 @@
         right: 1.5em; 
     }
 }
-
-.featured {
-    margin-bottom: 8%; 
-    h4 {
-        text-align: center; 
+h4 {
+    text-align: center; 
+}
+.about {
+    margin: 0 20vw $panel-buffer 20vw; 
+    display: flex; 
+    img {
+        border-radius: 0 40%; 
+        width: 20vw; 
+        box-shadow: -0.5em 0.5em 1em $medium-gray; 
+        margin-right: 3vw; 
     }
+    .about-text {
+        @extend %body-font-regularize; 
+        p:nth-of-type(1) {
+            margin-top: 3em; 
+        }
+    }
+}
+.featured {
+    margin-bottom: $panel-buffer; 
     .horizontal-panels {
-        margin-bottom: 10%; 
+        margin-bottom: $panel-buffer; 
         div[class^="content-wide-"] {           // applying style to every wide content div
             border: solid $light-gray 0.1em; 
             height: 50vh; 
             margin: 1vh 20vh 1vh 20vh; 
             @extend %flex-center; 
             .wide-text {
-                margin: 0 3% 0 3%; 
+                margin: 0 3% 0 6%; 
                 display: inline-block; 
                 width: 45%;
                 h6 {
@@ -38,8 +56,8 @@
                     margin: 0 10% 0 10%; 
                 }
                 i {
-                    margin: 0 5% 0 0; 
-                    color: $light-gray; 
+                    margin: 0 1em 0 -0.5em; 
+                    color: $medium-gray; 
                 }
             }
             .feature-img {
@@ -67,6 +85,7 @@
             margin: 0 1% 0 1%; 
             i {
                 margin: 0.5em 0 0.8em 0;
+                color: $medium-gray; 
             }
             h6 {
                 margin-bottom: 0.3em; 
@@ -85,13 +104,34 @@
                 padding: 0.3em 0.4em; 
             }
             .current {
-                border-color: green;
-                color: green; 
+                border-color: $active-green;
+                color: $active-green; 
             }
             .past {
                 border-color: $medium-gray; 
                 color: $medium-gray; 
             }
+            &:hover {
+                p, i, h6 {
+                    color: white; 
+                }
+            }
+        }
+    }
+    #view-more {
+        text-align: right;
+        color: $medium-gray; 
+        text-decoration: none; 
+        p {
+            margin: 1.4em 5em 0 0; 
+        }
+        &:hover {
+            text-decoration: underline; 
+            color: black; 
+        }
+        &:visited {
+            text-decoration: none; 
+            color: $medium-gray; 
         }
     }
 }
@@ -113,5 +153,23 @@
         &:hover {
             color: gradient($base-blue, $i); 
         }
+    }
+    .content-tall-#{$i} {
+        &:hover {
+            border-color: white; 
+            background-color: gradient($base-blue, $i); 
+        }
+    }
+}
+.footer {
+    display: flex; 
+    justify-content: space-between; 
+    background-color: $medium-gray; 
+    color: $opaque-light-gray; 
+    padding: 0.5em 1.5em; 
+    p, span {
+        @extend %body-font-regularize; 
+        font-size: 1em; 
+        margin: 0; 
     }
 }
