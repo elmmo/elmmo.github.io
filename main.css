@@ -103,6 +103,7 @@ h4 {
       border: solid rgba(223, 223, 223, 0.324) 0.1em;
       height: 50vh;
       width: 30vw;
+      transition: background-color .4s linear;
       flex-direction: column;
       text-align: center;
       padding: 6vh 0 6vh 0;
@@ -141,6 +142,14 @@ h4 {
     .featured #view-more:visited {
       text-decoration: none;
       color: rgba(148, 148, 148, 0.721); }
+      .featured .vertical-panels div[class^="content-tall-"]:hover .current {
+        border-color: rgb(100, 206, 105);
+        background-color: rgb(100, 206, 105);
+        color: white;}
+      .featured .vertical-panels div[class^="content-tall-"]:hover .past {
+        border-color: rgb(148, 148, 148);
+        background-color: rgb(148, 148, 148);
+        color: white; }
 
 .social-bar {
   margin: 2em 0 2em 0; }
