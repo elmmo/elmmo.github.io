@@ -106,7 +106,8 @@ h4 {
       flex-direction: column;
       text-align: center;
       padding: 6vh 0 6vh 0;
-      margin: 0 1% 0 1%; }
+      margin: 0 1% 0 1%;
+      transition: background-color .4s linear; }
       .featured .vertical-panels div[class^="content-tall-"] i {
         margin: 0.5em 0 0.8em 0;
         color: rgba(148, 148, 148, 0.721); }
@@ -122,11 +123,13 @@ h4 {
         border-radius: 0.3em;
         padding: 0.3em 0.4em; }
       .featured .vertical-panels div[class^="content-tall-"] .current {
-        border-color: #00d200;
-        color: #00d200; }
+        border-color: #64ce69;
+        background-color: #64ce69;
+        color: white; }
       .featured .vertical-panels div[class^="content-tall-"] .past {
         border-color: rgba(148, 148, 148, 0.721);
-        color: rgba(148, 148, 148, 0.721); }
+        background-color: rgba(148, 148, 148, 0.721);
+        color: white; }
       .featured .vertical-panels div[class^="content-tall-"]:hover p, .featured .vertical-panels div[class^="content-tall-"]:hover i, .featured .vertical-panels div[class^="content-tall-"]:hover h6 {
         color: white; }
   .featured #view-more {

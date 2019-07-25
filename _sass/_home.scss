@@ -83,6 +83,7 @@ h4 {
             text-align: center; 
             padding: 6vh 0 6vh 0; 
             margin: 0 1% 0 1%; 
+            transition: background-color .4s linear;
             i {
                 margin: 0.5em 0 0.8em 0;
                 color: $medium-gray; 
@@ -105,11 +106,13 @@ h4 {
             }
             .current {
                 border-color: $active-green;
-                color: $active-green; 
+                background-color: $active-green; 
+                color: white; 
             }
             .past {
                 border-color: $medium-gray; 
-                color: $medium-gray; 
+                background-color: $medium-gray; 
+                color: white; 
             }
             &:hover {
                 p, i, h6 {
