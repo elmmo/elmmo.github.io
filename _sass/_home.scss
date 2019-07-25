@@ -106,17 +106,21 @@ h4 {
             }
             .current {
                 border-color: $active-green;
-                background-color: $active-green; 
-                color: white; 
+                color: $active-green; 
             }
             .past {
                 border-color: $medium-gray; 
-                background-color: $medium-gray; 
-                color: white; 
+                color: $medium-gray; 
             }
             &:hover {
-                p, i, h6 {
+                p, i, h6, .current, .past {
                     color: white; 
+                }
+                .current {
+                    background-color: $active-green; 
+                }
+                .past {
+                    background-color: $medium-gray; 
                 }
             }
         }
