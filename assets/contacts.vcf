@@ -1,0 +1,18 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Eli Min
+N:Min;Eli;;;
+item1.EMAIL;TYPE=INTERNET:example@email.com
+item1.X-ABLabel:
+TEL;TYPE=CELL:(253) 380-4145
+ORG:Georgia Tech
+TITLE:Being a poo
+item2.URL:https\://elmmo.github.io/
+item2.X-ABLabel:
+item3.URL:https\://www.linkedin.com/in/elizabeth-min/
+item3.X-ABLabel:LinkedIn
+NOTE:super cool\, kind of clumsy
+PHOTO:https://lh3.googleusercontent.com/contacts/AG6tpzHBfTjdhl7Od-Iar052qz
+ Whvukw-1UNG61vqGe8hyUCdzJ9bB9P
+CATEGORIES:myContacts
+END:VCARD

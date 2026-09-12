@@ -1,2 +1,4 @@
 name: Elmmo
 markdown: kramdown
+sass:
+  style: compact # possible values: nested expanded compact compressed

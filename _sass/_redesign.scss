@@ -1,0 +1,24 @@
+// Alyssa Redesign work goes here 9/12/26
+
+// $body-font: "Atkinson Hyperlegible";
+// $title-font: "Inter";
+
+h2 {
+    font-size: 3em;
+}
+
+.body-wrapper {
+    padding: 2rem;
+}
+
+.contact-card {
+    padding: 1em;
+    background-color: aliceblue;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column;
+
+    button {
+        width:fit-content;
+    }
+}
