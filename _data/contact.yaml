@@ -1,0 +1,14 @@
+
+links:
+ - label: Google Scholar
+   icon: "fa-brands fa-google-scholar"
+   url: "https://scholar.google.com/"
+
+ - label: LinkedIn
+   icon: "fa-brands fa-linkedin"
+   url: "https://www.linkedin.com/in/elizabeth-min/"
+
+ - label: Email
+   icon: "fa-solid fa-envelope"
+   url: "mailto:elmmo@gatech.edu"
+

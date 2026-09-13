@@ -1,0 +1,31 @@
+papers:
+ - name: Example paper goes here
+   url: https://www.linkedin.com/in/elizabeth-min/
+   publication-links: 
+    - type: DOI
+      url: https://www.linkedin.com/in/elizabeth-min/
+    - type: PDF
+      url: www.example.com
+   venue: CSCW
+   venue-full: Proceedings of the ACM on Human-Computer Interaction 8, no. CSCW1
+   contributors: Eli, Alyssa, Mengting, Mohit, Aranya :)
+   awards: 
+    - award-name: Best paper ever
+    - award-name: Most Improved
+   press:
+    - press-item-html: <p> whatever, man </p>
+
+ - name: "Eli's second paper whooo"
+   publication-links: 
+    - type: DOI
+      url: www.example.com
+    - type: PDF
+      url: www.example.com
+   venue: 
+   venue-full: 
+   contributors:
+   awards: 
+    - award-name: Best paper ever
+    - award-name: Most Improved
+   press:
+    - press-item-html: <p> whatever, man </p>
