@@ -4,14 +4,28 @@ title: "Nice to meet you!"
 permalink: /hello/
 ---
 
-<h2>Nice to meet you!</h2>
+<div class="business-card">
+    <h2>Nice to meet you!</h2>
 
-<div class="contact-card">
-    Here's my contact info!
+    <div class="contact-card">
+        Let's talk again sometime
+        <a href="/assets/contacts.vcf" download="Eli Contact" class="contact-button">
+            <i class="fa-icon fa-solid fa-user-plus button-icon"></i>
+            Add Contact
+        </a>
+    </div>
 
-    <button>
-        <a href="/assets/contacts.vcf" download="Eli Contact"> Add Contact </a>
-    </button>
+    <div class="link-wrapper">
+        <h4> You can also find me here: </h4>
+        {% for link in site.data.contact.links %}
+        <a href="{{ link.url }}" target="_blank" class="link-item">
+            <i class="fa-icon {{ link.icon }}"></i>
+            {{ link.label }}
+        </a>
+        {% endfor %}
+    </div>
+
+    <!-- {% for paper in site.data.work.papers %} -->
+    <!-- <a href="{{ paper.url }}">{{ paper.name }}</a> -->
+    <!-- {% endfor %} -->
 </div>
-<p>Hello world!</p>
-<p> looks great today</p>

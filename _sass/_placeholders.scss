@@ -5,6 +5,19 @@
     align-items: center; 
 }
 
+%flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+%flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    align-items: center;
+}
+
 /* TYPOGRAPHY */ 
 %body-font-regularize {
     letter-spacing: 0.2px; 
