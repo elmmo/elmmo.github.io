@@ -1,6 +1,6 @@
 // Alyssa Redesign work goes here 9/12/26
 
-// $body-font: "Atkinson Hyperlegible";
+// $body-font: "Inter";
 // $title-font: "Inter";
 
 $corner-sm: 4px;
@@ -20,20 +20,6 @@ i.fa-icon {
     justify-content: center;
     height: 16px;
     width: 16px;
-}
-
-* {
-    font-family: "Inter";
-}
-
-h2 {
-    font-size: 3em;
-    font-family: "Inter";
-}
-
-h4 {
-    font-size: 1.25em;
-    font-family: "Inter";
 }
 
 .business-card {
@@ -66,7 +52,7 @@ h4 {
         max-width: 20em;
         justify-content: center;
 
-        .button-icon {}
+        // .button-icon {}
     }
 }
 
