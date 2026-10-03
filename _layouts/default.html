@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html>
+---
+layout: compress
+---
 
-<head>
-	<link rel="stylesheet" href="/assets/css/main.css" />
-	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
-	<title>{{ page.title }}</title>
-</head>
+{% include base_path %}
 
-<body>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/cv">CV</a></li>
-			<li><a href="/blog">Blog</a></li>
-		</ul>
-	</nav>
-	<div class="container">
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-		{{ content }}
+  <body>
 
-	</div><!-- /.container -->
-	<footer>
-		<ul>
-			<li><a href="mailto:elmm682@gmail.com">email</a></li>
-			<li><a href="https://github.com/elmmo">github.com/elmmo</a></li>
-		</ul>
-	</footer>
-</body>
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
 
+    {{ content }}
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
 </html>
