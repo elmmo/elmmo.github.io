@@ -1,0 +1,29 @@
+---
+permalink: /hello
+author_profile: false
+footer: false
+---
+
+<!-- {% include typography-scale.html %} -->
+
+<div class="business-card">
+    <h2>Nice to meet you!</h2>
+
+    <div class="contact-card">
+        Let's talk again sometime
+        <a href="/assets/contacts.vcf" download="Eli Contact" class="contact-button">
+            <i class="fa-icon fa-solid fa-user-plus button-icon"></i>
+            Add Contact
+        </a>
+    </div>
+
+    <div class="link-wrapper">
+        <h4> You can also find me here: </h4>
+        {% for link in site.data.contact.links %}
+        <a href="{{ link.url }}" target="_blank" class="link-item">
+            <i class="fa-icon {{ link.icon }}"></i>
+            {{ link.label }}
+        </a>
+        {% endfor %}
+    </div>
+</div>

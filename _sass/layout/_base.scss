@@ -15,9 +15,12 @@ body {
   background-color: var(--global-bg-color);
   scrollbar-width: thin;
 
-  margin: 0;
-  padding: 0 0;
-  padding-bottom: 9em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+
   font-family: $global-font-family;
   line-height: 1.5;
 
