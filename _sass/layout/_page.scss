@@ -26,6 +26,7 @@ a {
 
   @include breakpoint($x-large) {
     max-width: $x-large;
+    padding-top: 5em;
   }
 }
 
