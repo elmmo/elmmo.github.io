@@ -1,0 +1,39 @@
+- title: "Aligning with Lived Experience: Heterogeneous Benefits of Fine Tuning in Mental Health Support Generation"
+  authors: "Mohit Chandra, Nabin Kim, <b>Eli Min</b>, Aamogh Sawant, Tanmay Sutar, Munmun De Choudhury"
+  image: "eli-cool.jpg"
+  citation: "https://arxiv.org/abs/2609.21075"
+  year: 2026
+  month: 9
+  doi: "https://doi.org/10.48550/arXiv.2609.21075"
+  pdf: "https://arxiv.org/pdf/2609.21075"
+  # project: "https://example.com"
+  bibtex: |
+    @misc{chandra2026aligninglivedexperienceheterogeneous,
+      title={Aligning with Lived Experience: Heterogeneous Benefits of Fine Tuning in Mental Health Support Generation}, 
+      author={Mohit Chandra and Nabin Kim and Eli Min and Aamogh Sawant and Tanmay Sutar and Munmun De Choudhury},
+      year={2026},
+      eprint={2609.21075},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2609.21075}, 
+
+# - title: "sdlkfjskldf ldskfjs "
+#   tag: "sdlkfjskldf ldskfjs "
+#   awards: ["sdlkfjskldf ldskfjs ", "sdlkfjskldf ldskfjs "]
+#   authors: "sdlkfjskldf ldskfjs "
+#   citation: "sdlkfjskldf ldskfjs "
+#   year: 2026
+#   month: 4
+#   doi: "sdlkfjskldf ldskfjs "
+#   pdf: "sdlkfjskldf ldskfjs "
+#   bibtex: |
+#     @article{Article Name,
+#       title={...},
+#       author={...},
+#       year={2026}
+#     }
+#   talks:
+#     - text: "Invited talk @ "
+#       link_text: "Example"
+#       link: "https://example.com"
+#       after: " about the thing"

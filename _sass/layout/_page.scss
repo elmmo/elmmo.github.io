@@ -2,6 +2,18 @@
    SINGLE PAGE/POST
    ========================================================================== */
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $scroll-thumb $scroll-track;
+}
+
+mark {}
+
+a {
+  text-decoration: none;
+  color: --global-link-color;
+}
+
 #main {
   @include container;
   @include clearfix;
@@ -19,8 +31,8 @@
 .page {
   @include breakpoint($large) {
     @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
+    @include prefix(1.25 of 12);
+    @include suffix(.5 of 12);
   }
 
   .page__inner-wrap {
@@ -38,7 +50,7 @@
   margin-top: 0;
   line-height: 1;
 
-  & + .page__meta {
+  &+.page__meta {
     margin-top: -0.5em;
   }
 }
@@ -50,22 +62,29 @@
 
 .page__content {
 
-  h2 {
+  max-width: 40rem;
+
+  // h2 {}
+
+  .h-divider {
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--global-border-color);
   }
 
-  p, li, dl {
+  p,
+  li,
+  dl {
     font-size: 1em;
   }
 
   /* paragraph indents */
   p {
     margin: 0 0 $indent-var;
+    line-height: 150%;
 
     /* sibling indentation*/
-    @if $paragraph-indent == true {
-      & + p {
+    @if $paragraph-indent ==true {
+      &+p {
         text-indent: $indent-var;
         margin-top: -($indent-var);
       }
@@ -73,7 +92,7 @@
   }
 
   a {
-    text-decoration: underline;
+    // text-decoration: underline;
 
     &:hover {
       text-decoration: underline;
@@ -101,7 +120,7 @@
   }
 
   /* blockquote citations */
-  blockquote + .small {
+  blockquote+.small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
   }
@@ -300,6 +319,7 @@
   transition: $global-transition;
 
   &.disabled {
+
     input,
     button,
     textarea,

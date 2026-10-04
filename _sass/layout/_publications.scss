@@ -1,0 +1,136 @@
+$pub-accent: #12667f;
+$pub-muted: #6b7280;
+$pub-border: #e5e7eb;
+
+.pub-section {
+  margin-top: 2.5rem;
+
+  h2 { margin-bottom: 0.5rem; }
+
+  .pub-note {
+    color: $pub-muted;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+  }
+}
+
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-item {
+  padding: 1.1rem 0 1.2rem;
+  border-bottom: 1px solid $pub-border;
+  line-height: 1.5;
+
+  &:last-child { border-bottom: none; }
+}
+
+.pub-heading {
+  font-size: 1.05em;
+  line-height: 1.55;
+}
+
+.pub-tag {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: $pub-accent;
+  background: #dff0f5;
+  border-radius: 4px;
+  vertical-align: 1px;
+}
+
+.pub-title {
+  font-weight: 600;
+}
+
+.pub-awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.35rem 0 0.2rem;
+}
+
+.pub-award {
+  padding: 0.05rem 0.55rem;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #9a5b00;
+  background: #fdebd0;
+  border-radius: 4px;
+}
+
+.pub-authors {
+  margin-top: 0.3rem;
+  font-size: 0.95em;
+  color: #374151;
+
+  b { color: #000; font-weight: 700; }
+}
+
+.pub-citation {
+  margin-top: 0.2rem;
+  font-size: 0.88em;
+  font-style: italic;
+  color: $pub-muted;
+}
+
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.pub-btn {
+  padding: 0.3rem 0.75rem;
+  font: inherit;
+  font-size: 0.82em;
+  color: #374151;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+
+  &:hover {
+    color: $pub-accent;
+    border-color: $pub-accent;
+    background: #f3fafc;
+  }
+}
+
+.pub-talks {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  font-size: 0.9em;
+  color: #4b5563;
+
+  li {
+    position: relative;
+    margin-bottom: 0.45rem;
+    padding-left: 1rem;
+
+    &::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: #9ca3af;
+    }
+  }
+
+  a { color: $pub-accent; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}
+
+@media (max-width: 600px) {
+  .pub-btn { font-size: 0.78em; padding: 0.25rem 0.6rem; }
+}

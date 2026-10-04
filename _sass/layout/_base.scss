@@ -13,9 +13,10 @@ body {
   /* Set via _themes.scss */
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  scrollbar-width: thin;
 
   margin: 0;
-  padding: $masthead-height 0 0;
+  padding: 0 0;
   padding-bottom: 9em;
   font-family: $global-font-family;
   line-height: 1.5;
@@ -30,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
   font-family: $header-font-family;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 h1 {

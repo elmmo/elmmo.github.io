@@ -1,0 +1,55 @@
+<ul class="pub-list">
+    {% assign pubs = site.data.publications | sort: "year" | reverse %}
+    {% for pub in pubs %}
+    <li class="pub-item">
+        <div class="pub-heading">
+            {% if pub.tag %}<span class="pub-tag">{{ pub.tag }}</span>{% endif %}
+            {% if pub.citation %} <a href="{{ pub.citation }}" target="_blank" rel="noopener noreferrer" class="pub-title"> {{ pub.title }} </a>
+            {% else %}
+            <span class="pub-title">{{ pub.title }}</span> {% endif %}
+        </div>
+
+        {% if pub.awards %}
+        <div class="pub-awards">
+            {% for a in pub.awards %}<span class="pub-award">🏅 {{ a }}</span>{% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="pub-authors">{{ pub.authors }}</div>
+        <div class="pub-citation">{{ pub.citation }}</div>
+
+        <div class="pub-actions">
+            {% if pub.doi %}<a class="pub-btn" href="{{ pub.doi }}" target="_blank" rel="noopener noreferrer" rel="noopener">DOI</a>{% endif
+            %}
+            {% if pub.pdf %}<a class="pub-btn" href="{{ pub.pdf }}" target="_blank" rel="noopener noreferrer" rel="noopener">PDF</a>{% endif
+            %}
+            {% if pub.project %}<a class="pub-btn" href="{{ pub.project }}" target="_blank" rel="noopener noreferrer" rel="noopener">Project
+                page</a>{% endif %}
+            {% if pub.bibtex %}
+            <button class="pub-btn pub-bibtex" type="button" data-bibtex="{{ pub.bibtex | escape }}">BibTeX</button>
+            {% endif %}
+        </div>
+
+        {% if pub.talks %}
+        <ul class="pub-talks">
+            {% for t in pub.talks %}
+            <li>{{ t.text }}<a href="{{ t.link }}" target="_blank" rel="noopener noreferrer" rel="noopener">{{ t.link_text }}</a>{{ t.after }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+    document.querySelectorAll('.pub-bibtex').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            navigator.clipboard.writeText(btn.dataset.bibtex).then(function () {
+                var old = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(function () { btn.textContent = old; }, 1500);
+            });
+        });
+    });
+</script>
