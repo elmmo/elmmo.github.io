@@ -1,5 +1,5 @@
 /* ==========================================================================
-    AIR THEME - LIGHT VERSION
+    ALYSSA THEME - LIGHT VERSION
     ========================================================================== */
 
 /* Color codes used for the theme */
@@ -35,7 +35,7 @@ $sidebar-link-max-width     : 350px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Light theme for the site */
-:root {
+:root, html[data-theme="dark"] {
     --global-base-color                 : #{$primary-color};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #{$footer};
