@@ -7,213 +7,312 @@ footer: false
 <!-- {% include typography-scale.html %} -->
 
 {% if page.author and site.data.authors[page.author] %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
 
 <div class="business-card">
-  <h1 class="type-size-2">Nice to meet you!</h1>
+      <h1 class="type-size-2 title-reveal">Nice to meet you!</h1>
+      <img src="/images/Squiggle-bg.gif" alt="decorative underline" fetchpriority="high" style="    mix-blend-mode: exclusion"/>
 
-  <div class="contact-card">
-    Let's talk again sometime
-    <!-- <a href="/assets/contacts.vcf" download="Eli Contact" class="contact-button">
-            <i class="fa-icon fa-solid fa-user-plus button-icon"></i>
-            Add Contact
-        </a> -->
-  </div>
+      <div class="contact-card reveal">
+            <div>
+                  {% if author.avatar contains "://" %}
+                  <a href="{{ site.url }}"><img src="{{ author.avatar }}" alt="{{ author.name }}"
+                              fetchpriority="high" /></a>
+                  {% else %}
+                  <a href="{{ site.url }}"><img src="{{ author.avatar | prepend: " /images/" | prepend: base_path }}"
+                              class="author__avatar" alt="{{ author.name }}" fetchpriority="high" /></a>
+                  {% endif %}
+            </div>
+            <p>
+                  My name's Eli and I'm a PhD student studying human-AI interaction and social computing at Georgia
+                  Tech.
+            </p>
+            <p>
+                  Learn more about me and my work here:
+            </p>
+            <a href="{{ site.url }}"><button>elmmo.github.io</button></a></a>
+      </div>
 
-  <div class="link-wrapper">
-    <h3> You can also find me here: </h3>
-    <div class="author__urls-wrapper">
-      <ul class="author__urls social-icons">
-        <!-- Font Awesome icons / Biographic information  -->
-        {% if author.employer %}
-        <li class="author__desktop"><i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>{{ author.employer
-          }}</li>
-        {% endif %}
-        {% if author.uri %}
-        <li><a href="{{ author.uri }}" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-link"
-              aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
-        {% endif %}
-        {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i>{{
-            site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
-        {% endif %}
+      <div class="link-wrapper reveal">
+            <div class="links-title">
+                  <hr>
+                  <h3> You can also find me at </h3>
+                  <hr>
+            </div>
+            <div class="hello-links">
+                  <!-- Font Awesome icons / Biographic information  -->
+                  {% if author.employer %}
+                  <button><i class="fas fa-fw fa-building-columns" aria-hidden="true"> </i>{{ author.employer
+                        }}</button>
+                  {% endif %}
+                  {% if author.uri %}
+                  <a href="{{ author.uri }}" target="_blank" rel="noopener noreferrer">
+                        <button class="fas fa-fw fa-link" aria-hidden="true">
+                              {{site.data.ui-text[site.locale].website_label | default: "Website"}}
+                        </button></a>
+                  {% endif %}
+                  {% if author.email %}
+                  <a href="mailto:{{ author.email }}">
+                        <button>
+                              <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
+                              {{ site.data.ui-text[site.locale].email_label | default: "Email" }}
+                        </button>
+                  </a>
+                  {% endif %}
 
-        <!-- Font Awesome and Academicons icons / Academic websites -->
-        {% if author.academia %}
-        <li><a href="{{ author.academia }}" target="_blank" rel="noopener noreferrer"><i class="ai ai-academia ai-fw"
-              aria-hidden="true"></i>Academia</a></li>
-        {% endif %}
-        {% if author.arxiv %}
-        <li><a href="{{ author.arxiv }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-arxiv ai-fw"></i>arXiv</a></li>
-        {% endif %}
-        {% if author.googlescholar %}
-        <li><a href="{{ author.googlescholar }}" target="_blank" rel="noopener noreferrer"><i
-              class="fa-brands fa-google-scholar fa-fw"></i>Google Scholar</a></li>
-        {% endif %}
-        {% if author.inspire-hep %}
-        <li><a href="{{ author.inspire-hep }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-inspire ai-fw"></i>INSPIRE-HEP</a></li>
-        {% endif %}
-        {% if author.impactstory %}
-        <li><a href="{{ author.impactstory }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-impactstory ai-fw"></i>Impactstory</a></li>
-        {% endif %}
-        {% if author.orcid %}
-        <li><a href="{{ author.orcid }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-orcid ai-fw"></i>ORCID</a></li>
-        {% endif %}
-        {% if author.pubmed %}
-        <li><a href="{{ author.pubmed }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-pubmed ai-fw"></i>PubMed</a></li>
-        {% endif %}
-        {% if author.researchgate %}
-        <li><a href="{{ author.researchgate }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-researchgate" aria-hidden="true"></i>ResearchGate</a></li>
-        {% endif %}
-        {% if author.scopus %}
-        <li><a href="{{ author.scopus }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-scopus ai-fw"></i>Scopus</a></li>
-        {% endif %}
-        {% if author.semantic %}
-        <li><a href="{{ author.semantic }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-semantic-scholar ai-fw"></i>Semantic Scholar</a></li>
-        {% endif %}
-        {% if author.ssrn %}
-        <li><a href="{{ author.ssrn }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-ssrn ai-fw"></i>SSRN</a></li>
-        {% endif %}
-        {% if author.zotero %}
-        <li><a href="{{ author.zotero }}" target="_blank" rel="noopener noreferrer"><i
-              class="ai ai-zotero ai-fw"></i>Zotero</a></li>
-        {% endif %}
+                  <!-- Font Awesome and Academicons icons / Academic websites -->
+                  {% if author.academia %}
+                  <a href="{{ author.academia }}" target="_blank" rel="noopener noreferrer"><button
+                              class="ai ai-academia ai-fw" aria-hidden="true">Academia
+                        </button></a>
+                  {% endif %}
+                  {% if author.arxiv %}
+                  <a href="{{ author.arxiv }}" target="_blank" rel="noopener noreferrer">
+                        <button>
+                              <i class="ai ai-arxiv ai-fw"></i>arXiv
+                        </button></a>
+                  {% endif %}
+                  {% if author.googlescholar %}
+                  <a href="{{ author.googlescholar }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fa-brands fa-google-scholar fa-fw"></i>Google Scholar
+                        </button> </a>
+                  {% endif %}
+                  {% if author.inspire-hep %}
+                  <a href="{{ author.inspire-hep }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-inspire ai-fw"></i>INSPIRE-HEP
+                        </button></a>
+                  {% endif %}
+                  {% if author.impactstory %}
+                  <a href="{{ author.impactstory }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-impactstory ai-fw"></i>Impactstory
+                        </button></a>
+                  {% endif %}
+                  {% if author.orcid %}
+                  <a href="{{ author.orcid }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-orcid ai-fw"></i>ORCID
+                        </button></a>
+                  {% endif %}
+                  {% if author.pubmed %}
+                  <a href="{{ author.pubmed }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-pubmed ai-fw"></i>PubMed
+                        </button></a>
+                  {% endif %}
+                  {% if author.researchgate %}
+                  <a href="{{ author.researchgate }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-researchgate" aria-hidden="true"></i>ResearchGate
+                        </button></a>
+                  {% endif %}
+                  {% if author.scopus %}
+                  <a href="{{ author.scopus }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-scopus ai-fw"></i>Scopus
+                        </button></a>
+                  {% endif %}
+                  {% if author.semantic %}
+                  <a href="{{ author.semantic }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-semantic-scholar ai-fw"></i>Semantic Scholar
+                        </button></a>
+                  {% endif %}
+                  {% if author.ssrn %}
+                  <a href="{{ author.ssrn }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-ssrn ai-fw"></i>SSRN
+                        </button></a>
+                  {% endif %}
+                  {% if author.zotero %}
+                  <a href="{{ author.zotero }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="ai ai-zotero ai-fw"></i>Zotero
+                        </button></a>
+                  {% endif %}
 
-        <!-- Font Awesome icons / Repositories and software development -->
-        {% if author.bitbucket %}
-        <li><a href="https://bitbucket.org/{{ author.bitbucket }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-bitbucket" aria-hidden="true"></i>Bitbucket</a></li>
-        {% endif %}
-        {% if author.codepen %}
-        <li><a href="https://codepen.io/{{ author.codepen }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-codepen" aria-hidden="true"></i>CodePen</a></li>
-        {% endif %}
-        {% if author.dribbble %}
-        <li><a href="https://dribbble.com/{{ author.dribbble }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-dribbble" aria-hidden="true"></i>Dribbble</a></li>
-        {% endif %}
-        {% if author.github %}
-        <li><a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub</a></li>
-        {% endif %}
-        {% if author.kaggle %}
-        <li><a href="https://kaggle.com/{{ author.kaggle }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-kaggle" aria-hidden="true"></i>Kaggle</a></li>
-        {% endif %}
-        {% if author.stackoverflow %}
-        <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" target="_blank"
-            rel="noopener noreferrer"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i>Stackoverflow</a>
-        </li>
-        {% endif %}
+                  <!-- Font Awesome icons / Repositories and software development -->
+                  {% if author.bitbucket %}
+                  <a href="https://bitbucket.org/{{ author.bitbucket }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i>Bitbucket
+                        </button></a>
+                  {% endif %}
+                  {% if author.codepen %}
+                  <a href="https://codepen.io/{{ author.codepen }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-codepen" aria-hidden="true"></i>CodePen
+                        </button></a>
+                  {% endif %}
+                  {% if author.dribbble %}
+                  <a href="https://dribbble.com/{{ author.dribbble }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-dribbble" aria-hidden="true"></i>Dribbble
+                        </button></a>
+                  {% endif %}
+                  {% if author.github %}
+                  <a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub
+                        </button></a>
+                  {% endif %}
+                  {% if author.kaggle %}
+                  <a href="https://kaggle.com/{{ author.kaggle }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-kaggle" aria-hidden="true"></i>Kaggle
+                        </button></a>
+                  {% endif %}
+                  {% if author.stackoverflow %}
+                  <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i>Stackoverflow
+                        </button></a>
+                  {% endif %}
 
-        <!-- Font Awesome icons / Social media -->
-        {% if author.artstation %}
-        <li><a href="https://www.artstation.com/{{ author.artstation }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-artstation" aria-hidden="true"></i>Artstation</a></li>
-        {% endif %}
-        {% if author.bluesky %}
-        <li><a href="https://bsky.app/profile/{{ author.bluesky }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-bluesky" aria-hidden="true"></i>Bluesky</a></li>
-        {% endif %}
-        {% if author.facebook %}
-        <li><a href="https://www.facebook.com/{{ author.facebook }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-facebook-f" aria-hidden="true"></i>Facebook</a></li>
-        {% endif %}
-        {% if author.flickr %}
-        <li><a href="https://www.flickr.com/{{ author.flickr }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-flickr" aria-hidden="true"></i>Flickr</a></li>
-        {% endif %}
-        {% if author.foursquare %}
-        <li><a href="https://foursquare.com/{{ author.foursquare }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-foursquare" aria-hidden="true"></i>Foursquare</a></li>
-        {% endif %}
-        {% if author.goodreads %}
-        <li><a href="https://www.goodreads.com/{{ author.goodreads }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-goodreads" aria-hidden="true"></i>Goodreads</a></li>
-        {% endif %}
-        {% if author.google_plus %}
-        <li><a href="https://plus.google.com/+{{ author.google_plus }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-google-plus-g" aria-hidden="true"></i>Google+</a></li>
-        {% endif %}
-        {% if author.keybase %}
-        <li><a href="https://keybase.io/{{ author.keybase }}" target="_blank" rel="noopener noreferrer"><i
-              class="fas fa-fw fa-key" aria-hidden="true"></i>Keybase</a></li>
-        {% endif %}
-        {% if author.instagram %}
-        <li><a href="https://instagram.com/{{ author.instagram }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-instagram" aria-hidden="true"></i>Instagram</a></li>
-        {% endif %}
-        {% if author.lastfm %}
-        <li><a href="https://last.fm/user/{{ author.lastfm }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-lastfm" aria-hidden="true"></i>Last.fm</a></li>
-        {% endif %}
-        {% if author.linkedin %}
-        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
-        {% endif %}
-        {% if author.mastodon %}
-        <li><a href="{{ author.mastodon }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-mastodon"
-              aria-hidden="true"></i>Mastodon</a></li>
-        {% endif %}
-        {% if author.medium %}
-        <li><a href="{{ author.medium }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-medium"
-              aria-hidden="true"></i>Medium</a></li>
-        {% endif %}
-        {% if author.pinterest %}
-        <li><a href="https://www.pinterest.com/{{ author.pinterest }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-pinterest" aria-hidden="true"></i>Pinterest</a></li>
-        {% endif %}
-        {% if author.soundcloud %}
-        <li><a href="https://soundcloud.com/{{ author.soundcloud }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-soundcloud" aria-hidden="true"></i>Soundcloud</a></li>
-        {% endif %}
-        {% if author.steam %}
-        <li><a href="https://steamcommunity.com/id/{{ author.steam }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-steam" aria-hidden="true"></i>Steam</a></li>
-        {% endif %}
-        {% if author.telegram %}
-        <li><a href="{{ author.telegram }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-telegram"
-              aria-hidden="true"></i>Telegram</a></li>
-        {% endif %}
-        {% if author.tumblr %}
-        <li><a href="https://{{ author.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-tumblr" aria-hidden="true"></i>Tumblr</a></li>
-        {% endif %}
-        {% if author.twitter %}
-        <li><a href="https://twitter.com/{{ author.twitter }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-x-twitter" aria-hidden="true"></i>X (formerly Twitter)</a></li>
-        {% endif %}
-        {% if author.weibo %}
-        <li><a href="https://www.weibo.com/{{ author.weibo }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-weibo" aria-hidden="true"></i>Weibo</a></li>
-        {% endif %}
-        {% if author.wikipedia %}
-        <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}" target="_blank"
-            rel="noopener noreferrer"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i>Wikipedia</a></li>
-        {% endif %}
-        {% if author.xing %}
-        <li><a href="https://www.xing.com/profile/{{ author.xing }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-xing" aria-hidden="true"></i>XING</a></li>
-        {% endif %}
-        {% if author.youtube %}
-        <li><a href="https://www.youtube.com/@{{ author.youtube }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-youtube" aria-hidden="true"></i>YouTube</a></li>
-        {% endif %}
-        {% if author.zhihu %}
-        <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-fw fa-zhihu" aria-hidden="true"></i>Zhihu</a></li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
+                  <!-- Font Awesome icons / Social media -->
+                  {% if author.artstation %}
+                  <a href="https://www.artstation.com/{{ author.artstation }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-artstation" aria-hidden="true"></i>Artstation
+                        </button></a>
+                  {% endif %}
+                  {% if author.bluesky %}
+                  <a href="https://bsky.app/profile/{{ author.bluesky }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i>Bluesky
+                        </button></a>
+                  {% endif %}
+                  {% if author.facebook %}
+                  <a href="https://www.facebook.com/{{ author.facebook }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-facebook-f" aria-hidden="true"></i>Facebook
+                        </button></a>
+                  {% endif %}
+                  {% if author.flickr %}
+                  <a href="https://www.flickr.com/{{ author.flickr }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-flickr" aria-hidden="true"></i>Flickr
+                        </button></a>
+                  {% endif %}
+                  {% if author.foursquare %}
+                  <a href="https://foursquare.com/{{ author.foursquare }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-foursquare" aria-hidden="true"></i>Foursquare
+                        </button>
+                        {% endif %}</a>
+                  {% if author.goodreads %}
+                  <a href="https://www.goodreads.com/{{ author.goodreads }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-goodreads" aria-hidden="true"></i>Goodreads
+                        </button>
+                        {% endif %}</a>
+                  {% if author.google_plus %}
+                  <a href="https://plus.google.com/+{{ author.google_plus }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-google-plus-g" aria-hidden="true"></i>Google+
+                        </button>
+                        {% endif %}</a>
+                  {% if author.keybase %}
+                  <a href="https://keybase.io/{{ author.keybase }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fas fa-fw fa-key" aria-hidden="true"></i>Keybase
+                        </button></a>
+                  {% endif %}
+                  {% if author.instagram %}
+                  <a href="https://instagram.com/{{ author.instagram }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-instagram" aria-hidden="true"></i>Instagram
+                        </button></a>
+                  {% endif %}
+                  {% if author.lastfm %}
+                  <a href="https://last.fm/user/{{ author.lastfm }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-lastfm" aria-hidden="true"></i>Last.fm
+                        </button></a>
+                  {% endif %}
+                  {% if author.linkedin %}
+                  <a href="https://www.linkedin.com/in/{{ author.linkedin }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>LinkedIn
+                        </button></a>
+                  {% endif %}
+                  {% if author.mastodon %}
+                  <a href="{{ author.mastodon }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-mastodon" aria-hidden="true"></i>Mastodon
+                        </button></a>
+                  {% endif %}
+                  {% if author.medium %}
+                  <a href="{{ author.medium }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-medium" aria-hidden="true"></i>Medium
+                        </button></a>
+                  {% endif %}
+                  {% if author.pinterest %}
+                  <a href="https://www.pinterest.com/{{ author.pinterest }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-pinterest" aria-hidden="true"></i>Pinterest</button></a>
+                  {% endif %}
+                  {% if author.soundcloud %}
+                  <a href="https://soundcloud.com/{{ author.soundcloud }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i>Soundcloud
+                        </button></a>
+                  {% endif %}
+                  {% if author.steam %}
+                  <a href="https://steamcommunity.com/id/{{ author.steam }}" target="_blank"
+                        rel="noopener noreferrer"><button><i class="fab fa-fw fa-steam"
+                                    aria-hidden="true"></i>Steam</button></a>
+                  {% endif %}
+                  {% if author.telegram %}
+                  <a href="{{ author.telegram }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-telegram" aria-hidden="true"></i>Telegram
+                        </button></a>
+                  {% endif %}
+                  {% if author.tumblr %}
+                  <a href="https://{{ author.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-tumblr" aria-hidden="true"></i>Tumblr
+                        </button></a>
+                  {% endif %}
+                  {% if author.twitter %}
+                  <a href="https://twitter.com/{{ author.twitter }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i>X
+                              (formerly Twitter)
+                        </button></a>
+                  {% endif %}
+                  {% if author.weibo %}
+                  <a href="https://www.weibo.com/{{ author.weibo }}" target="_blank" rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-weibo" aria-hidden="true"></i>
+                        </button>Weibo</a>
+                  {% endif %}
+                  {% if author.wikipedia %}
+                  <a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i>Wikipedia
+                        </button></a>
+                  {% endif %}
+                  {% if author.xing %}
+                  <a href="https://www.xing.com/profile/{{ author.xing }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-xing" aria-hidden="true"></i>XING
+                        </button></a>
+                  {% endif %}
+                  {% if author.youtube %}
+                  <a href="https://www.youtube.com/@{{ author.youtube }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-youtube" aria-hidden="true"></i>YouTube
+                        </button></a>
+                  {% endif %}
+                  {% if author.zhihu %}
+                  <a href="https://www.zhihu.com/people/{{ author.zhihu }}" target="_blank"
+                        rel="noopener noreferrer"><button>
+                              <i class="fab fa-fw fa-zhihu" aria-hidden="true"></i>Zhihu
+                        </button></a>
+                  {% endif %}
+            </div>
+      </div>
 </div>
+
+<script>
+      window.scrollTo(0,0);
+      const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);   // animate once
+                  }
+            });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+      document.querySelectorAll(".title-reveal").forEach((el) => observer.observe(el));
+      document.querySelectorAll(".fast-reveal").forEach((el) => observer.observe(el));
+      
+      window.scrollTo(0,0);
+</script>
