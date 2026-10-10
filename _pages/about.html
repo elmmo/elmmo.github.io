@@ -7,15 +7,27 @@ redirect_from:
 ---
 
 <!-- {% include typography-scale.html %} -->
- {% include base_path %}
+{% include base_path %}
 
 {% if page.author and site.data.authors[page.author] %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
-<h2> Research </h2>
-
+<h2>About</h2>
 <p>
-  I study how the way we interact with AI changes the way we interact with each other. 
+  Hi! I'm Eli. I study human-AI interaction, social computing, and computational social science with the goal of making
+  technology better for people. 
+</p>
+<p>
+  I am currently pursuing a PhD at the
+  <a href="https://www.gatech.edu/" target="_blank" rel="noopener noreferrer">Georgia Institute of Technology</a>
+  where I am advised by
+  <a href="http://www.munmund.net/" target="_blank" rel="noopener noreferrer">Prof. Munmun de Choudhury</a>
+  and funded by the
+  <a href="https://www.nsf.gov/" target="_blank" rel="noopener noreferrer">National Science Foundation (NSF)</a>
+  and
+  <a href="https://cra.org/about/">Computing Research Association (CRA)</a>.
+  Previously, I worked as a software engineer building distributed scalable systems for big data and AI at Expedia,
+  Microsoft, and Garmin. Outside of the lab, I like to dance, cook, and eat 🍽️.
 </p>
 
 <section id="publications" class="pub-section">
